@@ -1,0 +1,4 @@
+- Clonar el proyecto desde https://github.com/wetsdev/wets-frontend-dev-test.git
+- Hacer un "npm install" para instalar las dependencias de NODE
+- Correr el proyecto con "npm run dev" se ejecutará en un puerto disponible generado por VITE
+- Debe ingresar el usuario y la clave para poder logearse. El usuario y clave se encuentra en la carpeta public/backend-endpoint.json
