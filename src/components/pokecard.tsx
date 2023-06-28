@@ -13,13 +13,14 @@ import { usePokemon } from "./../hooks/usePokemon";
 interface Props {
   url: string;
   handleOpen: () => void;
+  addId: any;
 }
 
-export const PokeCard = ({ url, handleOpen}: Props) => {
+export const PokeCard = ({ url, handleOpen, addId}: Props) => {
   const { pokemon } = usePokemon(url);
 
   const ShowModal = () => {
-    localStorage.setItem('idPoke', ""+pokemon?.id+"");
+    addId(pokemon?.id);
     handleOpen();
   }
 

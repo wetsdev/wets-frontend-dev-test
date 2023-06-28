@@ -13,11 +13,12 @@ interface Props {
 export const PokeList = ({ pokemonsUrls, page }: Props) => {
 
   const [open, setOpen] = React.useState(false);
+  const [id, setId] = React.useState('');
+
+  const addId = (idpoke:any) => {setId(idpoke)};
 
   const handleOpen = () => {setOpen(true);};
   const handleClose = () => {setOpen(false)};
-
-  const id = localStorage.getItem('idPoke');
 
 
   return (
@@ -26,7 +27,7 @@ export const PokeList = ({ pokemonsUrls, page }: Props) => {
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 20 }}>
           {pokemonsUrls?.slice((page - 1) * 10, (page - 1) * 10 + 10).map((pokemonUrl) => (
             <Grid item xs={2} sm={4} md={4} key={pokemonUrl}>
-            <PokeCard key={pokemonUrl} url={pokemonUrl} handleOpen={handleOpen}/>
+            <PokeCard key={pokemonUrl} url={pokemonUrl} handleOpen={handleOpen} addId={addId}/>
             </Grid>
           ))}
         </Grid>

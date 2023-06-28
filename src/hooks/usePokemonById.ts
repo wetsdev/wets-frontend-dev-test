@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { IPokemon } from "../interfaces/interfaces";
 
-export const usePokemonById = (id?: any) => {
+export const usePokemonById = (id?: string) => {
   const [pokemon, setPokemon] = useState<null | undefined | IPokemon>();
 
   const fetchPokemon = async () => {
